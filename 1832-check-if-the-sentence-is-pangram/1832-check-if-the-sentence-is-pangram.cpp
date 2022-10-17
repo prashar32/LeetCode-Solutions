@@ -1,11 +1,8 @@
 class Solution {
 public:
     bool checkIfPangram(string sentence) {
-        vector<bool>have(26, false);
-        for(auto x : sentence)
-            have[x-'a'] = true;
-        for(auto x : have)
-            if(x == false)
+        for(char ch='a' ; ch<='z' ; ch++)
+            if(sentence.find(ch)==string::npos)
                 return false;
         return true;
     }
